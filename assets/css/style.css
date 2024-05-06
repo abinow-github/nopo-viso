@@ -1,0 +1,471 @@
+:root{
+    --primary-color:rgb(0 128 1);
+    --rowdies-font:"Rowdies", sans-serif;
+    --josefin-sans-font:"Josefin Sans", sans-serif;
+    --poetsen-one-font:"Poetsen One", sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap');
+/*==================================================================
+                        common styles
+==================================================================*/
+*{
+    /* font-family: var(--josefin-sans-font); */
+    font-family: var(--poetsen-one-font);
+    
+}
+p{
+    font-family: var(--josefin-sans-font);
+}
+.sctn-1,.sctn-2,.sctn-3,.sctn-4,.sctn-5,.sctn-6{
+    position: relative;
+    z-index: 5;
+}
+body{
+    position: relative;
+}
+/*==================================================================
+                        navbar
+==================================================================*/
+.navbar{
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    background: white;
+    .navbar-brand img{
+        height: 30px;
+    }
+    .navbar-collapse{
+        justify-content: center;
+        .navbar-nav{
+            gap: 5px;
+        }
+        .nav-item .nav-link{
+            text-transform: capitalize;
+            background-image: linear-gradient(to right,#54b3d6,#54b3d6 50%,#908d8d 50%);
+            background-size: 200% 100%;
+            background-position: 100%;
+            background-clip: text;
+            transition: 0.4s;
+            color: transparent;
+            letter-spacing: 1px;
+            font-size: 18px;
+        }
+        .nav-item .nav-link:hover{
+            background-position: 0;
+            transform: translateY(-3px);
+        }
+    }
+}
+/*==================================================================
+                        navbar END
+==================================================================*/
+
+
+/*==================================================================
+                        Banner 
+==================================================================*/
+.banner{
+    z-index: 5;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: white;
+    .container,.row{
+        height: 100%;
+    }
+    .cnt-col,.img-col{
+        align-items: center;
+        display: flex;
+    }
+
+    .cnt-col{/* content part */
+        .cnt{
+            .title{
+                font-size: 3.5rem;
+                font-weight: bold;
+                background: linear-gradient(45deg, #5f8b32, #0188b4);
+                background-clip: text;
+                color: transparent;
+                width: fit-content;
+                color: #393939;
+            }
+            .explore-btn{
+                background: linear-gradient(45deg, #198754, #41c688);
+                color: white;
+                padding: 10px 20px;
+                border: 0;
+                border-radius: 10px;
+                font-weight: bold;
+                font-size: 20px;
+                font-family: var(--josefin-sans-font);
+            }
+        }
+    }
+
+    .img-col .img-div{/* image part */
+        width: 100%;
+        .bnr-img{
+            width: 100%;
+        }
+    }
+}
+.banner::before{
+    content: '';
+    background: radial-gradient(#bce1ef 20%, white,white);
+    width: 50%;
+    height: 100%;
+}
+@media screen and (max-width:765px){
+    .banner{
+        height: fit-content;
+        padding-bottom: 50px;
+        padding-top: 100px;
+        text-align: center;
+        .cnt-col .cnt{
+            padding-bottom: 20px;
+        }
+        .cnt-col .cnt .title{
+            font-size: 2.5rem;
+        }
+    }
+}
+/*==================================================================
+                        Banner END
+==================================================================*/
+
+
+
+
+/*==================================================================
+                        About 
+==================================================================*/
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+  }
+.about.sctn-1{
+    text-align: center;
+    position: relative;
+    padding: 50px 0;
+    background: linear-gradient(0deg, #eef7f4, white)   ;
+    .row{
+        justify-content: center;
+        z-index: 1;
+        position: relative;
+
+        .cnt-col{/* content part */
+            .cnt .title{
+                text-transform: capitalize;
+            }
+        }
+
+        .icons-col{/* icons part */
+            padding: 30px 0;
+            .cards-div{
+                grid-template-columns: repeat(4,1fr);
+                gap: 20px;
+                .card{
+                    max-width: 250px;
+                    align-items: center;
+                    padding: 20px 10px;
+                    border: 0;
+                    box-shadow: 0px 0px 9px 1px #302e2e40;
+                    transition: 0.4s;
+                    .icon-count{
+                        .count-digit{
+                            transition: --num 1s , display 0s;
+                            counter-set: num var(--num);
+                          }
+                          .count-digit::after {
+                            content: counter(num);
+                            opacity: 0;
+                            display: none;
+                          }
+                        lord-icon{
+                            height: 70px;
+                            width: 70px;
+                            color: rgb(27, 229, 172);
+                        }
+                    }
+                    .card-title{
+                        color: gray;
+                    }
+                }
+                .card:hover{
+                    background: linear-gradient(45deg, #198754, #0f5132);
+                    border-radius: 15px;
+                    transform: translateY(-10px);
+                     .count-digit{
+                        display: none;
+                      }
+                      .count-digit{
+                        display: block;
+                        width: fit-content;
+                        opacity: 1;
+                      }
+                      .count-digit.a{
+                        --num: 40;
+                      }
+                      .count-digit.b{
+                        --num: 10000;
+                      }
+                      .count-digit.c{
+                        --num: 1500;
+                      }
+                      .count-digit.d{
+                        --num: 7;
+                      }
+                      .count-digit::after{
+                        opacity: 1;
+                        display: block;
+                      }
+                    .icon-count{
+                        .count{
+                            color: white;
+                        }
+                        lord-icon{
+                            color: white;
+                        }
+                    }
+                    .card-title{
+                        color: #e5e5e5;
+                    }
+                }
+            }
+        }
+
+        .img-col{/* image part */
+            .about-img{
+                max-width: 600px;
+                border-radius: 15px;
+            }
+        }
+    }
+}
+body::before{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/shapes/wave.jpg);
+    background-size: 2rem auto;
+    opacity: .5;
+    z-index: 0;
+}
+/*==================================================================
+                        About END
+==================================================================*/
+
+
+
+
+/*==================================================================
+                        world map /sctn-2
+==================================================================*/
+#IN {fill: rgb(20 144 208);}
+#IN:hover {fill: rgb(19, 106, 149);}
+.world-map.sctn-2{
+    background-color: #eef7f4;
+    padding: 50px 0;
+    .row{
+        width: 100%;
+    }
+.ag-canvas {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    visibility: visible;
+    height: 100%;
+    padding: 3rem 1rem;
+    opacity: 1;
+    transition: opacity 0.5s;
+  }
+  .ag-canvas_svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    margin-left: 1rem;
+  }
+  .ag-canvas_svg path {
+    /* fill: #3ccc88; */
+    fill: #bbd5c9;
+    fill-opacity: 1;
+    stroke: #ffffff;
+    stroke-opacity: 1;
+    stroke-width: 0.5;
+    transition: 0.5s;
+  }
+  
+  
+}
+/*==================================================================
+                        world map /sctn-2 END
+==================================================================*/
+
+
+
+/*==================================================================
+                        services /sctn-3 
+==================================================================*/
+@keyframes service {
+    0%{
+        transform: scale(0.9);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+.services.sctn-3{
+    background-color: #eef7f4;
+    padding: 50px 0;
+    .cnt-col{/* content part */
+        .title{
+            text-transform: capitalize;
+        }
+        .services-div{
+            grid-template-columns: repeat(2,1fr);
+            gap: 10px;
+            .service{
+                display: flex;
+                gap: 5px;
+                padding: 35px;
+                transition: 0.5s;
+                border-radius: 10px;
+                background-color: white;
+                transition: 0.5s;
+            }
+            .service .cnt{
+                .title{
+                    transition: 0.5s;
+                }
+                p{
+                    line-height: 1;
+                    font-size: 12px;
+                    color: grey;
+                    transition: 0.5s;
+                }
+            }
+            .service span.icon img{
+                height: 50px;
+                filter: invert(78%) sepia(17%) saturate(1500%) hue-rotate(95deg) brightness(86%) contrast(89%);
+            }
+            .service:nth-child(1) span.icon img{
+                filter: invert(78%) sepia(17%) saturate(1500%) hue-rotate(95deg) brightness(86%) contrast(89%);
+            }
+            .service:nth-child(2) span.icon img{
+                filter: invert(67%) sepia(85%) saturate(754%) hue-rotate(288deg) brightness(98%) contrast(86%);
+            }
+            .service:nth-child(3) span.icon img{
+                filter: invert(56%) sepia(47%) saturate(966%) hue-rotate(190deg) brightness(105%) contrast(82%);
+            }
+            .service:nth-child(4) span.icon img{
+                filter: invert(84%) sepia(54%) saturate(442%) hue-rotate(70deg) brightness(96%) contrast(89%);
+            }
+            .service:nth-child(5) span.icon img{
+                filter: invert(82%) sepia(100%) saturate(254%) hue-rotate(0deg) brightness(95%) contrast(91%);
+            }
+            .service:nth-child(6) span.icon img{
+                filter: invert(78%) sepia(96%) saturate(2423%) hue-rotate(306deg) brightness(96%) contrast(88%);
+            }
+            .service:nth-child(7) span.icon img{
+                filter: invert(65%) sepia(100%) saturate(2828%) hue-rotate(319deg) brightness(101%) contrast(82%);
+            }
+            .service:nth-child(8) span.icon img{
+                filter: invert(52%) sepia(90%) saturate(1761%) hue-rotate(227deg) brightness(92%) contrast(98%);
+            }
+            .service:nth-child(9) span.icon img{
+                filter: invert(72%) sepia(76%) saturate(3354%) hue-rotate(288deg) brightness(100%) contrast(83%);
+            }
+            .service:nth-child(10) span.icon img{
+                filter: invert(61%) sepia(29%) saturate(4837%) hue-rotate(202deg) brightness(92%) contrast(97%);
+            }
+            .service:nth-child(11) span.icon img{
+                filter: invert(87%) sepia(57%) saturate(587%) hue-rotate(1deg) brightness(93%) contrast(91%);
+            }
+            .service:hover{
+                cursor: pointer;
+                background: linear-gradient(45deg, #198754, #0f5132);
+                animation: service 0.2s linear;
+                .cnt .title{
+                    color: white;
+                }
+                .cnt p{
+                    color: wheat;
+                }
+                span.icon img{
+                    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(322deg) brightness(102%) contrast(101%);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:765px) {
+    .services.sctn-3{
+        .cnt-col .services-div .service{
+            flex-direction: column-reverse;
+            padding: 20px;
+            justify-content: flex-end;
+        }
+    }
+}
+/*==================================================================
+                        services /sctn-3 END
+==================================================================*/
+
+
+
+/*==================================================================
+                        footer
+==================================================================*/
+footer{
+    min-height: 80vh;
+    display: flex;
+    z-index: 5;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(360deg, black, #6178d0);
+    a{
+        text-decoration: none;
+    }
+    .footer-logo{
+        height: 50px;
+    }
+
+
+    .copyright-div{/* copyright part */
+    display: flex;
+    justify-content: space-between;
+      span,span a{
+        font-family: var(--josefin-sans-font);
+      }
+    }
+}
+footer::before{
+    /* content: ''; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    background: url(../img/banner/footer-bnr.gif);
+    background-size: 100% auto;
+    background-position: bottom;
+}
+/*==================================================================
+                        footer END
+==================================================================*/
