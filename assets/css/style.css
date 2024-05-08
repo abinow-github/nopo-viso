@@ -19,9 +19,20 @@ p{
 .sctn-1,.sctn-2,.sctn-3,.sctn-4,.sctn-5,.sctn-6{
     position: relative;
     z-index: 5;
+    padding: 100px 0;
+}
+h2{
+    font-size: 3rem;
+    text-transform: capitalize;
+    padding-bottom: 30px;
 }
 body{
-    position: relative;
+    user-select: none;
+}
+@media screen and (max-width:765px) {
+    h2{
+        font-size: 2.5rem;
+    }
 }
 /*==================================================================
                         navbar
@@ -33,6 +44,7 @@ body{
     left: 0;
     width: 100%;
     padding: 30px 20px;
+    transition: 0.5s;
     background: white;
     .navbar-brand img{
         height: 30px;
@@ -41,6 +53,10 @@ body{
         justify-content: center;
         .navbar-nav{
             gap: 5px;
+            position: relative;
+        }
+        .nav-item{
+            position: static;
         }
         .nav-item .nav-link{
             text-transform: capitalize;
@@ -53,11 +69,22 @@ body{
             letter-spacing: 1px;
             font-size: 18px;
         }
+        .nav-item .dropdown-toggle::after{
+            display: none;
+        }
         .nav-item .nav-link:hover{
             background-position: 0;
             transform: translateY(-3px);
         }
+        .nav-item .dropdown-menu{/* dropdown */
+            width: 100%;
+            min-height: 200px;
+        }
     }
+}
+.navbar.hide{
+    transform: translateY(-100%);
+    transition: 0.5s;
 }
 /*==================================================================
                         navbar END
@@ -73,6 +100,7 @@ body{
     width: 100%;
     height: 100vh;
     background: white;
+    background: linear-gradient(0deg, #eef7f4, white);
     .container,.row{
         height: 100%;
     }
@@ -151,7 +179,8 @@ body{
     text-align: center;
     position: relative;
     padding: 50px 0;
-    background: linear-gradient(0deg, #eef7f4, white)   ;
+    background: linear-gradient(0deg, #eef7f4, white);
+    background: #eef7f4;
     .row{
         justify-content: center;
         z-index: 1;
@@ -163,14 +192,15 @@ body{
             }
         }
 
-        .icons-col{/* icons part */
+        .icons-col{/* icons & image part */
             padding: 30px 0;
             .cards-div{
-                grid-template-columns: repeat(4,1fr);
+                grid-template-columns: repeat(5,1fr);
+                grid-template-rows: repeat(2,1fr);
                 gap: 20px;
                 .card{
-                    max-width: 250px;
                     align-items: center;
+                    justify-content: center;
                     padding: 20px 10px;
                     border: 0;
                     box-shadow: 0px 0px 9px 1px #302e2e40;
@@ -193,7 +223,20 @@ body{
                     }
                     .card-title{
                         color: gray;
+                        text-transform: capitalize;
                     }
+                }
+                .item-1{
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                }
+                .item-3{
+                    grid-column-start: 2;
+                    grid-column-end: 5;
+                    grid-row-start: 1;
+                    grid-row-end: 3;
+                    align-items: center;
+                    display: flex;
                 }
                 .card:hover{
                     background: linear-gradient(45deg, #198754, #0f5132);
@@ -238,26 +281,74 @@ body{
             }
         }
 
-        .img-col{/* image part */
+        .img-div{/* image part */
+            border-radius: 15px;
+            overflow: hidden;
+            transition: 0.4s;
+            cursor: pointer;
             .about-img{
-                max-width: 600px;
-                border-radius: 15px;
+                transition: 0.5s;
+            }
+        }
+        .img-div:hover{
+            transform: scale(0.9);
+            .about-img{
+                transform: scale(1.2);
             }
         }
     }
 }
-body::before{
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(../img/shapes/wave.jpg);
-    background-size: 2rem auto;
-    opacity: .5;
-    z-index: 0;
+
+@media screen and (min-width:1200px) {
+    .about.sctn-1{
+        .row .icons-col{
+            padding: 30px 50px;
+        }
+    }
+}
+@media screen and (max-width:992px) {
+    .about.sctn-1{
+        .row .icons-col .cards-div{
+            grid-template-columns: repeat(2,1fr);
+            .item-1{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            .item-2{
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 2;
+            }
+            .item-4{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+            .item-5{
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 3;
+            }
+            .item-3{
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 3;
+                grid-row-end: 4;
+            }
+        }
+    } 
+}
+@media screen and (max-width:765px) {
+    .about.sctn-1{
+        .row .icons-col{
+            padding: 0 30px;
+        }
+    }
 }
 /*==================================================================
                         About END
@@ -414,6 +505,9 @@ body::before{
 
 @media screen and (max-width:765px) {
     .services.sctn-3{
+        .cnt-col .services-div{
+            grid-template-columns: repeat(1,1fr);
+        }
         .cnt-col .services-div .service{
             flex-direction: column-reverse;
             padding: 20px;
@@ -427,9 +521,193 @@ body::before{
 
 
 
+
+/*==================================================================
+                        sectors / sctn-4 
+==================================================================*/
+.sectors.sctn-4{
+    padding: 50px 0;
+    .container{
+        z-index: 5;
+        position: relative;
+    }
+    .sectors-div{/* sectors/cards part */
+        grid-template-columns: repeat(2, 1fr);
+        z-index: 5;
+        height: 100%;
+        gap: 20px;
+        .card.sector{
+            padding: 10px;
+            padding-left: 20px;
+            padding-top: 20px;
+            flex-direction: row;
+            justify-content: space-between;
+            border: 0;
+            .card-title{
+                text-transform: capitalize;
+                letter-spacing: 1px;
+                color: white;
+            }
+            .sector-img{
+                width: 40%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+        .card.sector:nth-child(1){
+            background: linear-gradient(45deg, #7a4135, #fead7f);
+        }
+        .card.sector:nth-child(2){
+            background: linear-gradient(45deg, #4f4b28, #e2e28a);
+        }
+        .card.sector:nth-child(3){
+            background: linear-gradient(45deg, #536770, #659fdb);
+        }
+        .card.sector:nth-child(4){
+            background: linear-gradient(45deg, #246454, #51bfa6);
+        }
+    }
+}
+.sectors.sctn-4::before{
+    content: '';
+    height: 50%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    position: absolute;
+    background-image: radial-gradient(#000000 0.5px, transparent 0.5px), radial-gradient(#000000 0.5px, #ffffff00 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+}
+.sectors.sctn-4::after{
+    z-index: 1;
+    content: '';
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: absolute;
+    
+    background: linear-gradient(180deg, #eef7f4 60%, rgba(255, 255, 255, 0));
+}
+@media screen and (max-width:765px) {
+    .sectors.sctn-4{
+        .sectors-div{/* sectors/cards part */
+            grid-template-columns: repeat(1, 1fr);
+        }
+        .row .img-col{
+            display: none;
+        }
+    }
+}
+/*==================================================================
+                        sectors / sctn-4 END
+==================================================================*/
+
+
+
+/*==================================================================
+                        google review / sctn-5 
+==================================================================*/
+.google-review.sctn-5{
+    background-image: radial-gradient(#000000 0.5px, transparent 0.5px), radial-gradient(#000000 0.5px, #ffffff00 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    padding-bottom: 200px;
+    .row.title-row2{/* google logo-button  */
+        .col-md-8.google-title-col{
+            align-items: center;
+            gap: 10px;
+            .google-review-logo-img{
+                height: 50px;
+            }
+            .rating-div{
+                font-size: 35px;
+                background: linear-gradient(45deg, #f1b500, #ffd863);
+                /* background-image: repeating-linear-gradient(to right, #a2682a 0%, #be8c3c 8%, #be8c3c 18%, #d3b15f 27%, #be8c3c 35%, #ffc124 40%, #be8c3c 50%, #d3b15f 58%, #be8c3c 67%, #b17b32 77%, #bb8332 83%, #d4a245 88%, #e1b453 93%, #a4692a 100%) */;
+                background-clip: text;
+                color: transparent;
+            }
+        }
+        .view-more-col .view-more-btn{
+            color: white;
+            background-color: blue;
+            background: linear-gradient(45deg, #0b3b81, #0d6efd);
+            border: 0;
+            border-radius: 5px;
+            padding: 10px 15px;
+            height: fit-content;
+        }
+    }
+
+    .slider.review-slider{/* slider */
+        padding-top: 10px;
+        .slide.card{
+            margin: 0 10px;
+            .profile-row{
+                gap: 10px;
+                .profile-div .profile{
+                    height: 50px;
+                    width: 50px;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-transform: uppercase;
+                    border-radius: 50%;
+                    color: white;
+                    background: linear-gradient(45deg, #0b3b81, #0d6efd);
+                    font-size: x-large;
+                }
+                .name-date-div .date{
+                    color: gray;
+                }
+            }
+            .rating-row{
+                color: gold;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+/*==================================================================
+                        google review / sctn-5 END
+==================================================================*/
+
+
 /*==================================================================
                         footer
 ==================================================================*/
+/* wave Animation */
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+  @keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }
+  
 footer{
     min-height: 80vh;
     display: flex;
@@ -438,6 +716,7 @@ footer{
     flex-direction: column;
     justify-content: space-between;
     background: linear-gradient(360deg, black, #6178d0);
+    padding-top: 100px;
     a{
         text-decoration: none;
     }
@@ -453,6 +732,19 @@ footer{
         font-family: var(--josefin-sans-font);
       }
     }
+
+    .waves{/* wave animation */
+        position:absolute;
+        width: 100%;
+        height:15vh;
+        top: 0;
+        left: 0;
+        transform: translateY(-100%);
+        margin-bottom:-7px; /*Fix for safari gap*/
+        min-height:150px;
+        max-height:200px;
+        padding-top: 50px;
+      }
 }
 footer::before{
     /* content: ''; */
@@ -466,6 +758,18 @@ footer::before{
     background-size: 100% auto;
     background-position: bottom;
 }
+/*Shrinking for mobile*/
+@media screen and (max-width: 768px) {
+    footer{
+        .copyright-div{
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+    footer .waves {
+      min-height:40px;
+    }
+  }
 /*==================================================================
                         footer END
 ==================================================================*/

@@ -1,3 +1,24 @@
+////navbar scroll-y
+var prevScrollY = window.scrollY;
+
+window.addEventListener('scroll', function() {
+  var navbar = document.getElementById('navbar');
+  var currentScrollY = window.scrollY;
+
+  if (currentScrollY > prevScrollY) {
+    // Scrolling down (scrollY increasing)
+    navbar.classList.add('hide');
+  } else if (currentScrollY < prevScrollY) {
+    // Scrolling up (scrollY decreasing)
+    navbar.classList.remove('hide');
+  }
+
+  // Update prevScrollY for the next scroll event
+  prevScrollY = currentScrollY;
+});
+
+
+
 /////////number count
 function visible(partial) {
     var $t = partial,
@@ -36,3 +57,29 @@ function showNum(element, a) {
     let num = a;
     element.querySelector('.count-digit').innerHTML = num;
 }
+
+
+/////google review slider slider / section-5
+$(document).ready(function(){
+  $('.review-slider').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1000,
+      speed:2000,
+      arrows: false,
+      dots: false,
+      pauseOnHover: false,
+      responsive: [{
+          breakpoint: 992,
+          settings: {
+              slidesToShow: 2
+          }
+      }, {
+          breakpoint: 720,
+          settings: {
+              slidesToShow: 1
+          }
+      }]
+  });
+});
