@@ -18,6 +18,49 @@ window.addEventListener('scroll', function() {
 });
 
 
+////////nav-button onclick (mobile/tab)
+function showNav(a){
+ a.classList.toggle('active')
+
+ var navbar = document.getElementById('navbar');
+ navbar.classList.toggle('show')
+
+ let navbarCollapse =document.getElementById('navbarNavDropdown')
+ navbarCollapse.classList.toggle('show')
+ if (document.documentElement.style.overflow === 'hidden') {
+  document.documentElement.style.overflow = '';
+} else {
+  document.documentElement.style.overflow = 'hidden';
+}
+}
+////////dropdown-menu onclick(mobile/tab)
+/* function showDrpdwnMenu(element){
+  let dropdownMenu = document.getElementById(element);
+  if (hasClass(dropdownMenu, 'show-l')) {
+    dropdownMenu.classList.remove('show-l');
+   }
+   else{
+    dropdownMenu.classList.add('show-l');
+   }
+} */
+////////dropdown-menu onclick(mobile/tab)
+function showDrpdwnMenu(element) {
+  let dropdownMenu = document.getElementById(element);
+  let navLogo=document.querySelector('.navbar-brand')
+  if (!hasClass(dropdownMenu, 'show-l')) {
+      dropdownMenu.classList.add('show-l');
+      navLogo.classList.add('z-index');
+  }
+  else{
+    dropdownMenu.classList.remove('show-l');
+    navLogo.classList.remove('z-index');
+  }
+}
+function hasClass(element, className) {
+  return element.classList.contains(className);
+}
+
+
 
 /////////number count
 function visible(partial) {

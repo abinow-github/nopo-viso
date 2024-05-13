@@ -1,5 +1,8 @@
-RewriteEngin on
+RewriteEngine on
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^home$ index.html [L]
-RewriteRule ^about$ about.html [L]
+RewriteRule ^company$ about.php [L]
+RewriteRule ^about$ about.php [L]
+RewriteRule ^contact$ contact.html [L]
+RewriteRule ^blog$ blog.php [L]

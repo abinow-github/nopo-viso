@@ -29,14 +29,39 @@ h2{
 body{
     user-select: none;
 }
+@media screen and (min-width:992px) {
+    .hide-lg{
+        display: none !important;
+    }
+}
+@media screen and (min-width:765px) and (max-width:992px) {
+    .hide-md{
+        display: none !important;
+    }
+}
 @media screen and (max-width:765px) {
     h2{
         font-size: 2.5rem;
+    }
+    .hide-sm{
+        display: none !important;
     }
 }
 /*==================================================================
                         navbar
 ==================================================================*/
+@keyframes dropdown-anime {
+    0%{
+        display: block !important;
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100%{
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .navbar{
     position: fixed;
     z-index: 100;
@@ -64,7 +89,7 @@ body{
             background-size: 200% 100%;
             background-position: 100%;
             background-clip: text;
-            transition: 0.4s;
+            transition: transform 0.4s,background-position 1s;
             color: transparent;
             letter-spacing: 1px;
             font-size: 18px;
@@ -78,13 +103,166 @@ body{
         }
         .nav-item .dropdown-menu{/* dropdown */
             width: 100%;
+            left: 0;
             min-height: 200px;
+            transform: translateY(50px);
         }
     }
+    
+    
+svg {/* navbar toggler */
+    height: 50px;
+    position: absolute;
+    width: 50px;
+    left: 0;
+    top: 0;
+  }
+  .plate {
+    height: 50px;
+    position: relative;
+    width: 50px;
+    cursor: pointer;
+    border: 0;
+    z-index: 21;
+  }
+  .burger {
+    filter: url(#gooeyness);
+  }
+  .x {
+    transform: scale(0);
+    transition: transform 400ms;
+  }
+  .line {
+    fill: none;
+    stroke: black;
+    stroke-width: 6px;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transform-origin: 50%;
+    transition: stroke-dasharray 500ms 200ms, stroke-dashoffset 500ms 200ms, transform 500ms 200ms;
+  }
+  .x .line {
+    stroke-width: 5.5px;
+  }
+  .plate1 .line2 {
+    stroke-dasharray: 40 200;
+    stroke-dashoffset: 0px;
+  }
+  .plate1 .line3 {
+    stroke-dasharray: 40 179;
+    stroke-dashoffset: 0px;
+  }
+  .active .line {
+    transition: stroke-dasharray 500ms, stroke-dashoffset 500ms, transform 500ms;
+  }
+  .active.plate1 .line1 {
+    transform: scale(0, 1);
+    transition: transform 500ms 100ms;
+  }
+  .active.plate1 .line2 {
+    stroke-dasharray: 5px 200;
+    stroke-dashoffset: -164px;
+  }
+  .active.plate1 .line3 {
+    stroke-dasharray: 5px 179;
+    stroke-dashoffset: -142px;
+  }
+  .active .x {
+    transform: scale(1);
+    transition: transform 400ms 350ms;
+  }/* navbar toggler END */
+
 }
 .navbar.hide{
     transform: translateY(-100%);
     transition: 0.5s;
+}
+.navbar.show,.navbar.hide.show{
+    transform: translateY(0) !important;
+}
+
+@media screen and (min-width:992px) {
+    .navbar .nav-item.dropdown:hover .dropdown-menu{
+        display: block;
+        animation: dropdown-anime 0.5s linear both;
+    }
+}
+@media screen and (min-width:1056px) and (max-width:1200px) {
+    .navbar .navbar-collapse .nav-item .nav-link{
+        font-size: 15px;
+    }
+}
+@media screen and (min-width:992px) and (max-width:1056px) {
+    .navbar .navbar-collapse .nav-item .nav-link{
+        font-size: 14px;
+        padding: 5px;
+    }
+}
+@media screen and (max-width:992px) {
+    .navbar{
+        padding: 20px;
+        .navbar-brand{
+            z-index: 21;
+        }
+        .navbar-brand.z-index{
+            z-index: 19;
+        }
+        .navbar-collapse{
+            display: block;
+            position: fixed;
+            z-index: 20;
+            padding-top: 100px;
+            padding-left: 30px;
+            background: white;
+            transform: translateX(100%);
+            right: 0;
+            top: 0;
+            height: 100vh;
+            width: 100%;
+            max-width: 350px;
+            transition: 0.5s;
+            .navbar-nav .nav-item:nth-child(1){
+                border-top: 1px solid #a5a5e2;
+            }
+            .navbar-nav .nav-item{
+                border-bottom: 1px solid #a5a5e2;
+            }
+            .nav-item .dropdown-menu{/* dropdown menu */
+                position: fixed;
+                display: block;
+                left: 0;
+                top: 0;
+                border: 0;
+                transform: translateX(100%) translateY(0);
+                height: 100vh;
+                z-index: 600;
+                transition: 0.5s;
+                padding-left: 30px;
+                padding-top: 0;
+                .back-btn-li{
+                    height: 100px;
+                    padding: 0;
+                    .back{
+                        background-color: white;
+                        border: 0;
+                        font-size: 20px;
+                    }
+                }
+            }
+            .nav-item .dropdown-menu.show-l{
+                transform: translateX(0) translateY(0);
+                transition: 0.5s;
+            }
+            .nav-item .dropdown-menu.show-l.hide-l{
+                transform: translateX(100%) translateY(0);
+                transition: 0.5s;
+            }
+        }
+        .navbar-collapse.show{
+            transform: translateX(0);
+        }
+        
+    }
 }
 /*==================================================================
                         navbar END
@@ -358,51 +536,41 @@ body{
 
 
 /*==================================================================
-                        world map /sctn-2
+                        india map /sctn-2
 ==================================================================*/
 #IN {fill: rgb(20 144 208);}
 #IN:hover {fill: rgb(19, 106, 149);}
 .world-map.sctn-2{
     background-color: #eef7f4;
-    padding: 50px 0;
+    padding-top: 100px;
     .row{
-        width: 100%;
+        margin: 0;
     }
-.ag-canvas {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
-    position: relative;
-    visibility: visible;
-    height: 100%;
-    padding: 3rem 1rem;
-    opacity: 1;
-    transition: opacity 0.5s;
-  }
-  .ag-canvas_svg {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 100%;
-    margin-left: 1rem;
-  }
-  .ag-canvas_svg path {
-    /* fill: #3ccc88; */
-    fill: #bbd5c9;
-    fill-opacity: 1;
-    stroke: #ffffff;
-    stroke-opacity: 1;
-    stroke-width: 0.5;
-    transition: 0.5s;
-  }
-  
-  
+    #chartdiv{
+        width: 100%;
+        height: 80vh;
+        border: 1px solid rgb(207, 204, 243);
+        border-radius: 10px;
+    }
+    .map-col{
+        position: relative;
+    }
+    .map-col .pos-abs-div{
+        position: absolute;
+        bottom: 2px;
+        left: 2px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: #eef7f4;
+    }
+}
+@media screen and (max-width:765px) {
+    .world-map.sctn-2 #chartdiv{
+        height: 400px;
+    }
 }
 /*==================================================================
-                        world map /sctn-2 END
+                        india map /sctn-2 END
 ==================================================================*/
 
 
@@ -420,7 +588,8 @@ body{
 }
 .services.sctn-3{
     background-color: #eef7f4;
-    padding: 50px 0;
+    padding-top: 0;
+    padding-bottom: 50px;
     .cnt-col{/* content part */
         .title{
             text-transform: capitalize;
