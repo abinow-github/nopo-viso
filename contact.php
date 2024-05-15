@@ -4,95 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nopo wiso about</title>
-    <!-- favicon -->
-         <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-         <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-         <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-         <link rel="manifest" href="favicon/site.webmanifest">
-         <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-         <meta name="msapplication-TileColor" content="#da532c">
-         <meta name="theme-color" content="#ffffff"> 
-    <!-- google font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poetsen+One&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
-
-    <!-- bootsrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-
-    <!--  fontawesome cdn -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <?php
+    include('head.php');
+    ?>
     <!-- css -->
-    <link rel="stylesheet" href="assets/css/style2.css">
     <link rel="stylesheet" href="assets/contact/css/style.css">
 
-    <!-- jquery slick -->
-    <link rel='stylesheet' href='//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css'>
-    <link rel='stylesheet' href='//cdn.jsdelivr.net/jquery.slick/1.5.0/slick-theme.css'>
-
-    <!-- fancybox -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+    
 </head>
 <body>
 <!-- navbar --> 
-   <nav class="navbar navbar-expand-lg navbar-light" id="navbar">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="home"><img src="info/lopo-viso logo-test.png" alt="nopowiso-logo"></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <!-- <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="about">about</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="sustainability">sustainability</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="innovations">innovations</a>
-          </li>
-          <li class="nav-item dropdown" onmouseover="showDropdown()">
-            <a class="nav-link dropdown-toggle" href="#" >
-              products & solutions<i class="fa-solid fa-angle-down"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-              services<i class="fa-solid fa-chevron-down"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" aria-expanded="false">
-              market segments<i class="fa-solid fa-angle-down"></i>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact">contact</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<?php
+include('header.php');
+?>
 <!-- navbar END --> 
 
 <!--==================================================================
@@ -241,6 +165,8 @@
                           Locations END
 ==================================================================-->
 
-
+<?php
+include('footer.php');
+?>
 </body>
 </html>

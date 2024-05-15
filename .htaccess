@@ -4,5 +4,7 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^home$ index.html [L]
 RewriteRule ^company$ about.php [L]
 RewriteRule ^about$ about.php [L]
-RewriteRule ^contact$ contact.html [L]
+RewriteRule ^contact$ contact.php [L]
+RewriteRule ^gallery$ gallery.php [L]
 RewriteRule ^blog$ blog.php [L]
+RewriteRule ^blog-details$ blog-details.php [L]
