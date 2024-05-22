@@ -12,6 +12,14 @@
          <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
          <meta name="msapplication-TileColor" content="#da532c">
          <meta name="theme-color" content="#ffffff"> 
+
+    <!-- Open Graph protocol -->
+    <meta property="og:title" content="Iwater soilution">
+    <meta property="og:description" content="nopo wiso home">
+    <meta property="og:image" content="http://localhost/nopo-viso/favicon/favicon-16x16.png">
+    <meta property="og:url" content="http://localhost/nopo-viso/home">
+    <meta property="og:type" content="article">
+
     <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +32,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- css -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?<?php echo time(); ?>">
 
     <!-- jquery slick -->
     <link rel='stylesheet' href='//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css'>
@@ -59,12 +67,6 @@
           <li class="nav-item">
             <a class="nav-link" href="about">company</a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="sustainability">sustainability</a>
-          </li> -->
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="innovations">innovations</a>
-          </li> -->
           <li class="nav-item dropdown" onclick="showDrpdwnMenu('dropdown-menu-a')">
             <div class="nav-link dropdown-toggle" >
               products & solutions<i class="fa-solid fa-angle-down"></i>
@@ -82,10 +84,12 @@
             </a>
             <ul class="dropdown-menu" id="dropdown-menu-b">
               <li class="back-btn-li d-flex align-items-center hide-lg"><button class="back" onclick="hideDrpdwnMenu('dropdown-menu-b')"><i class="fa-solid fa-arrow-left-long"></i></button></li><!-- back button li -->
-              <li><a class="dropdown-item" href="#">water treatment</a></li>
-              <li><a class="dropdown-item" href="#">research institute of environment</a></li>
-              <li><a class="dropdown-item" href="#">pollution testing - home</a></li>
-              <li><a class="dropdown-item" href="#">pollution testing - business</a></li>
+              <li class="services-li">
+                  <a class="dropdown-itm" href="#"><div class="img-div"><img src="assets/img/services/water solution'.webp" alt="water solution"></div><span class="heading">water treatment</span></a>
+                  <a class="dropdown-itm" href="#"><div class="img-div"><img src="assets/img/services/research environment.webp" alt="research environment"></div><span class="heading">research institute of environment</span></a>
+                  <a class="dropdown-itm" href="#"><div class="img-div"><img src="assets/img/services/pollution-home.jpg" alt="pollution testing"></div><span class="heading">pollution testing - home</span></a>
+                  <a class="dropdown-itm" href="#"><div class="img-div"><img src="assets/img/services/pollution-office.webp" alt="pollution testing"></div><span class="heading">pollution testing - business</span></a>
+              </li>
             </ul>
           </li>
           <!-- <li class="nav-item dropdown" onclick="showDrpdwnMenu('dropdown-menu-c')">
@@ -111,6 +115,11 @@
         </ul>
       </div>
     </div>
+    <!--scroll indicator-->
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+    <!--scroll indicator end-->
   </nav>
    <!-- navbar END --> 
 
@@ -122,7 +131,64 @@
     <div class="row">
       <div class="col-md-6 cnt-col">
         <div class="cnt">
-          <h1 class="title">Nature's Stewards: <br> Water & Environment Solutions</h1>
+          <h1 class="title">
+            <div class="row">
+            <div class="word">
+            <span style="--index: 0; --alpha-l: 0.125; --alpha-u: 0.25;">N</span>
+            <span style="--index: 1; --alpha-l: 0.125; --alpha-u: 0.25;">a</span>
+            <span style="--index: 2; --alpha-l: 0.125; --alpha-u: 0.25;">t</span>
+            <span style="--index: 3; --alpha-l: 0.125; --alpha-u: 0.25;">u</span>
+            <span style="--index: 4; --alpha-l: 0.125; --alpha-u: 0.25;">r</span>
+            <span style="--index: 5; --alpha-l: 0.125; --alpha-u: 0.25;">e'</span>
+            </div>
+            <div class="word">
+            <span style="--index: 6; --alpha-l: 0.125; --alpha-u: 0.25;">S</span>
+            <span style="--index: 7; --alpha-l: 0.125; --alpha-u: 0.25;">t</span>
+            <span style="--index: 8; --alpha-l: 0.125; --alpha-u: 0.25;">w</span>
+            <span style="--index: 9; --alpha-l: 0.125; --alpha-u: 0.25;">a</span>
+            <span style="--index: 10; --alpha-l: 0.125; --alpha-u: 0.25;">r</span>
+            <span style="--index: 11; --alpha-l: 0.125; --alpha-u: 0.25;">d</span>
+            <span style="--index: 12; --alpha-l: 0.125; --alpha-u: 0.25;">s</span>
+            <span style="--index: 12; --alpha-l: 0.125; --alpha-u: 0.25;">:</span>
+            </div>
+          </div>
+          <div class="row">
+             <div class="word">
+              <span style="--index: 0; --alpha-l: 0.125; --alpha-u: 0.25;">W</span>
+              <span style="--index: 1; --alpha-l: 0.125; --alpha-u: 0.25;">a</span>
+              <span style="--index: 2; --alpha-l: 0.125; --alpha-u: 0.25;">t</span>
+              <span style="--index: 3; --alpha-l: 0.125; --alpha-u: 0.25;">e</span>
+              <span style="--index: 4; --alpha-l: 0.125; --alpha-u: 0.25;">r</span>
+             </div>
+             <div class="word">
+              <span style="--index: 5; --alpha-l: 0.125; --alpha-u: 0.25;">&</span>
+             </div>
+             <div class="word">
+              <span style="--index: 6; --alpha-l: 0.125; --alpha-u: 0.25;">E</span>
+              <span style="--index: 7; --alpha-l: 0.125; --alpha-u: 0.25;">n</span>
+              <span style="--index: 8; --alpha-l: 0.125; --alpha-u: 0.25;">v</span>
+              <span style="--index: 9; --alpha-l: 0.125; --alpha-u: 0.25;">i</span>
+              <span style="--index: 10; --alpha-l: 0.125; --alpha-u: 0.25;">r</span>
+              <span style="--index: 11; --alpha-l: 0.125; --alpha-u: 0.25;">0</span>
+              <span style="--index: 12; --alpha-l: 0.125; --alpha-u: 0.25;">n</span>
+              <span style="--index: 13; --alpha-l: 0.125; --alpha-u: 0.25;">m</span>
+              <span style="--index: 14; --alpha-l: 0.125; --alpha-u: 0.25;">e</span>
+              <span style="--index: 15; --alpha-l: 0.125; --alpha-u: 0.25;">n</span>
+              <span style="--index: 16; --alpha-l: 0.125; --alpha-u: 0.25;">t</span>
+             </div>
+             <div class="word">
+              <span style="--index: 0; --alpha-l: 0.125; --alpha-u: 0.25;">S</span>
+              <span style="--index: 1; --alpha-l: 0.125; --alpha-u: 0.25;">o</span>
+              <span style="--index: 2; --alpha-l: 0.125; --alpha-u: 0.25;">l</span>
+              <span style="--index: 3; --alpha-l: 0.125; --alpha-u: 0.25;">u</span>
+              <span style="--index: 4; --alpha-l: 0.125; --alpha-u: 0.25;">t</span>
+              <span style="--index: 5; --alpha-l: 0.125; --alpha-u: 0.25;">i</span>
+              <span style="--index: 6; --alpha-l: 0.125; --alpha-u: 0.25;">o</span>
+              <span style="--index: 7; --alpha-l: 0.125; --alpha-u: 0.25;">n</span>
+              <span style="--index: 8; --alpha-l: 0.125; --alpha-u: 0.25;">s</span>
+             </div>
+            </div>
+              </h1>
           <p class="txt">Empowering Sustainable Futures Through Innovative Solutions.  Join us in shaping a greener future. 🌱💧</p>
           <button class="explore-btn">Explore</button>
         </div>
@@ -132,11 +198,15 @@
       </div>
     </div>
   </div>
+  <div class="brand-name">nopo wiso</div>
+  <div class="shape-2"></div>
+  <div class="shape-3"></div>
 </div>
 <!--==================================================================
                         banner END
 ==================================================================-->
 
+  <div class="shape-1"></div>
 
 <!--==================================================================
                         about 
@@ -146,7 +216,7 @@
     <div class="row">
       <div class="col-md-10 cnt-col">
         <div class="cnt">
-          <h2 class="title">about</h2>
+          <h2 class="title mb-0 pb-0">about</h2>
           <p class="cnt">
             BET EnviroCare Group is a comprehensive environmental solutions provider dedicated to 
             pollution diagnosis and sustainable practices. Our team of experienced engineers and 
@@ -223,7 +293,7 @@
   <div class="container">
    <div class="row">
     <div class="col-md-5 cnt-col"><!-- content -->
-      <h2 class="title">Find Us Across India</h2>
+      <h2 class="title mb-0 pb-0">Find Us Across India</h2>
       <p class="caption">Discover our network of dedicated environmental centers spread across India, working tirelessly to promote sustainable practices and combat pollution. Click on the markers to learn more about each location's initiatives and services.</p>
     </div>
     <div class="col-md-7 map-col p-0"><!-- map -->
@@ -654,6 +724,19 @@
     <!-- Copyright -->
   </footer>
 
+  <!-- whatsapp and call buttons -->
+  <div class="qk-contact-bar d-flex align-items-center justify-content-between" id="qk-contact-bar">
+    
+        <div class="call-btn-col d-flex justify-content-end">
+          <a href="tel:+919400123132" class="call-btn d-flex align-items-center  justify-content-end"><span class="number"><span class="wdth">1</span> +91 9400 123 132 </span>  <span class="icon d-flex align-items-center justify-content-center"><i class="fa-solid fa-phone"></i></span> </a>
+        </div>
+        <div class="wtsap-btn-col d-flex justify-content-start">
+          <a href="https://wa.me/9400123132" class="wtsap-btn d-flex align-items-center justify-content-start"><span class="icon d-flex align-items-center justify-content-center"><i class="fa-brands fa-whatsapp"></span></i>  <span class="number"> +91 9400 123 132 <span class="wdth">1</span></span> </a>
+        </div>
+
+  </div>
+  <!-- whatsapp and call buttons END -->
+
 
    <!-- bootsrap 5 -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -667,7 +750,7 @@
 
    <!-- jquery -->
    <!-- <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> -->
-   <script src="assets/js/script.js"></script>
+   <script src="assets/js/script.js?<?php echo time(); ?>"></script>
    <script src="assets/js/india-map.js"></script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.js"></script>

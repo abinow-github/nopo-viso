@@ -45,10 +45,12 @@
             </a>
             <ul class="dropdown-menu" id="dropdown-menu-b">
               <li class="back-btn-li d-flex align-items-center hide-lg"><button class="back" onclick="hideDrpdwnMenu('dropdown-menu-b')"><i class="fa-solid fa-arrow-left-long"></i></button></li><!-- back button li -->
-              <li><a class="dropdown-item" href="#">water treatment</a></li>
-              <li><a class="dropdown-item" href="#">research institute of environment</a></li>
-              <li><a class="dropdown-item" href="#">pollution testing - home</a></li>
-              <li><a class="dropdown-item" href="#">pollution testing - business</a></li>
+              <li class="services-li">
+                  <a class="dropdown-itm" href="#"><div class="img-div"><img src="assets/img/services/water solution'.webp" alt="water solution"></div><span class="heading">water treatment</span></a>
+                  <a class="dropdown-itm" href="#"><div class="img-div"><img src="assets/img/services/research environment.webp" alt="research environment"></div><span class="heading">research institute of environment</span></a>
+                  <a class="dropdown-itm" href="#"><div class="img-div"><img src="assets/img/services/pollution-home.jpg" alt="pollution testing"></div><span class="heading">pollution testing - home</span></a>
+                  <a class="dropdown-itm" href="#"><div class="img-div"><img src="assets/img/services/pollution-office.webp" alt="pollution testing"></div><span class="heading">pollution testing - business</span></a>
+              </li>
             </ul>
           </li>
           <!-- <li class="nav-item dropdown" onclick="showDrpdwnMenu('dropdown-menu-c')">
@@ -74,4 +76,9 @@
         </ul>
       </div>
     </div>
+    <!--scroll indicator-->
+    <div class="progress-container">
+      <div class="progress-bar" id="myBar"></div>
+    </div>
+    <!--scroll indicator end-->
   </nav>

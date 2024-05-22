@@ -49,37 +49,21 @@ include('header.php');
 <section class="sctn-gallery">
     <div class="container">
         <ul class="images">
-
+        <?php
+include("dashboard/root/db.php");
+              $sql ="SELECT * FROM  gallery ORDER BY id DESC";
+              $result =$mysqli->query($sql);
+              if ($result->num_rows > 0){
+                  while ($row=$result -> fetch_assoc())
+              {
                 
-                        <li><a data-fancybox="video-gallery"  href="info/gallery/1.jpg" class="fancybox" rel="ligthbox"><img src="info/gallery/1.jpg" class="zoom img-fluid "  alt="" ></a></li>
-                    
-
-                        <li><a data-fancybox="video-gallery"  href="info/gallery/2.webp" class="fancybox" rel="ligthbox"><img src="info/gallery/2.webp" class="zoom img-fluid "  alt="" ></a></li>
-                    
-
-                        <li><a data-fancybox="video-gallery"  href="info/gallery/3.webp" class="fancybox" rel="ligthbox"><img src="info/gallery/3.webp" class="zoom img-fluid "  alt="" ></a></li>
-                    
-
-                        <li><a data-fancybox="video-gallery"  href="info/gallery/4.jpg" class="fancybox" rel="ligthbox"><img src="info/gallery/4.jpg" class="zoom img-fluid "  alt="" ></a></li>
-                    
-
-                        <li><a data-fancybox="video-gallery"  href="info/gallery/5.jpg" class="fancybox" rel="ligthbox"><img src="info/gallery/5.jpg" class="zoom img-fluid "  alt="" ></a></li>
-                    
-
-                        <li><a data-fancybox="video-gallery"  href="info/gallery/6.png" class="fancybox" rel="ligthbox"><img src="info/gallery/6.png" class="zoom img-fluid "  alt="" ></a></li>
-                    
-
-                        <li><a data-fancybox="video-gallery"  href="info/gallery/7.png" class="fancybox" rel="ligthbox"><img src="info/gallery/7.png" class="zoom img-fluid "  alt="" ></a></li>
-                    
-
-                        <li><a data-fancybox="video-gallery"  href="info/gallery/8.webp" class="fancybox" rel="ligthbox"><img src="info/gallery/8.webp" class="zoom img-fluid "  alt="" ></a></li>
-                    
-
-                        <li><a data-fancybox="video-gallery"  href="info/gallery/9.jpg" class="fancybox" rel="ligthbox"><img src="info/gallery/9.jpg" class="zoom img-fluid "  alt="" ></a></li>
-                    
-
-                        <li><a data-fancybox="video-gallery"  href="info/gallery/10.png" class="fancybox" rel="ligthbox"><img src="info/gallery/10.png" class="zoom img-fluid "  alt="" ></a></li>
-                    
+              ?>
+                
+                        <li><a data-fancybox="video-gallery"  href="dashboard/images/gallery/<?php echo $row ["image"]; ?>" class="fancybox" rel="ligthbox"><img src="dashboard/images/gallery/<?php echo $row ["image"]; ?>" class="zoom img-fluid "  alt="name" ></a></li>
+              <?php
+              }
+            }
+                ?>
             
         </ul>
     </div>

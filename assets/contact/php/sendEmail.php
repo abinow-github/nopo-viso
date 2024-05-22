@@ -17,6 +17,7 @@ if($_POST) {
    $email = trim(stripslashes($_POST['email']));
    $subject = trim(stripslashes($_POST['subject']));
    $contact_message = trim(stripslashes($_POST['message']));
+   $webmail='info@abinow.com';
 
    
 	if ($subject == '') { $subject = "Contact Form Submission"; }
@@ -29,7 +30,7 @@ if($_POST) {
    $message .= "<br /> ----- <br /> This email was sent from your site " . url() . " contact form. <br />";
 
    // Set From: header
-   $from =  $name . " <" . $email . ">";
+   $from =  $name . " <" . $webmail . ">";
 
    // Email Headers
 	$headers = "From: " . $from . "\r\n";

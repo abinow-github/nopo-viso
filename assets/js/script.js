@@ -17,6 +17,27 @@ window.addEventListener('scroll', function() {
   prevScrollY = currentScrollY;
 });
 
+//////////scroll indicator
+window.onscroll = function() {myFunction()};
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+
+////////////quick contact buttons 
+document.addEventListener('DOMContentLoaded', function() {
+  var navbar = document.getElementById('qk-contact-bar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 150) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+});
+
 
 ////////nav-button onclick (mobile/tab)
 function showNav(a){
