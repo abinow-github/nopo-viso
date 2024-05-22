@@ -357,6 +357,11 @@ svg {/* navbar toggler */
       color: transparent; */
     }
   }
+  @keyframes banner-gif {
+    50%{
+        transform: translateY(-10px);
+    }
+  }
 .banner{
     z-index: 5;
     position: relative;
@@ -419,6 +424,7 @@ svg {/* navbar toggler */
             width: 100%;
             z-index: 100;
             position: relative;
+            animation: banner-gif 2s linear infinite;
         }
     }
 }

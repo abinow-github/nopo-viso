@@ -194,7 +194,7 @@
         </div>
       </div>
       <div class="col-md-6 img-col">
-        <div class="img-div"><img src="assets/img/banner/demo-bnr.png" alt="banner-image" class="bnr-img"></div>
+        <div class="img-div"><img src="assets/img/banner/banner.gif" alt="banner-image" class="bnr-img"></div>
       </div>
     </div>
   </div>
