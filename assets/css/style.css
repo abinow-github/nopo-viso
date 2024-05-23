@@ -812,6 +812,7 @@ svg {/* navbar toggler */
                 border-radius: 10px;
                 background-color: white;
                 transition: 0.5s;
+                cursor: pointer;
             }
             .service .cnt{
                 .title{
@@ -861,8 +862,7 @@ svg {/* navbar toggler */
             .service:nth-child(11) span.icon img{
                 filter: invert(87%) sepia(57%) saturate(587%) hue-rotate(1deg) brightness(93%) contrast(91%);
             }
-            .service:hover{
-                cursor: pointer;
+            .service:hover,.service.show{
                 background: linear-gradient(45deg, #198754, #0f5132);
                 animation: service 0.2s linear;
                 .cnt .title{

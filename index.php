@@ -40,6 +40,9 @@
 
     <!-- fancybox -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.0.47/jquery.fancybox.min.css" />
+
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
    <!-- navbar --> 
@@ -48,15 +51,7 @@
       <a class="navbar-brand" href="home"><img src="info/lopo-viso logo-test.png" alt="nopowiso-logo"></a>
 
       <div class="plate plate1 navbar-toggler" onclick="showNav(this)">
-        <svg class="burger" version="1.1" height="100" width="100" viewBox="0 0 100 100">
-          <path class="line line1" d="M 30,65 H 70"/>
-          <path class="line line2" d="M 70,50 H 30 C 30,50 18.644068,50.320751 18.644068,36.016949 C 18.644068,21.712696 24.988973,6.5812347 38.79661,11.016949 C 52.604247,15.452663 46.423729,62.711864 46.423729,62.711864 L 50.423729,49.152542 L 50.423729,16.101695"/>
-          <path class="line line3" d="M 30,35 H 70 C 70,35 80.084746,36.737688 80.084746,25.423729 C 80.084746,19.599612 75.882239,9.3123528 64.711864,13.559322 C 53.541489,17.806291 54.423729,62.711864 54.423729,62.711864 L 50.423729,49.152542 V 16.101695"/>
-        </svg>
-        <svg class="x" version="1.1" height="100" width="100" viewBox="0 0 100 100">
-          <path class="line" d="M 34,32 L 66,68" />
-          <path class="line" d="M 66,32 L 34,68" />
-        </svg>
+      <i class="fa-solid fa-bars"></i>
       </div>
 
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -324,7 +319,7 @@
       <h2 class="title">services</h2>
       <div class="services-div d-grid">
 
-        <div class="service">
+        <div class="service" onclick="service(this)">
           <div class="cnt">
            <h5 class="title">Water Testing Lab (Govt. Approved)</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -332,7 +327,7 @@
           <span class="icon"><img src="assets/img/icons/service/Water Testing Lab.png" alt="service"></span>
         </div>
 
-        <div class="service">
+        <div class="service" onclick="service(this)">
           <div class="cnt">
            <h5 class="title"> Water Treatment (WTP, RO, UF, UV, OZONE)</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -340,7 +335,7 @@
           <span class="icon"><img src="assets/img/icons/service/Water Treatment .png" alt="service"></span>
         </div>
 
-        <div class="service">
+        <div class="service" onclick="service(this)">
           <div class="cnt">
            <h5 class="title"> Waste Water Treatment ( STP, ETP, O&G Traps)</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -348,17 +343,17 @@
           <span class="icon"><img src="assets/img/icons/service/Waste Water Treatment .png" alt="service"></span>
         </div>
 
-        <div class="service">
+        <div class="service" onclick="service(this)">
           <div class="cnt">
            <h5 class="title"> Swimming Pool</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
           </div> 
-          <span class="icon"><img src="assets/img/icons/service/Swimming Pool.png" alt="service"></span>
+          <span class="icon" onclick="service(this)"><img src="assets/img/icons/service/Swimming Pool.png" alt="service"></span>
         </div>
 
         <div class="service">
           <div class="cnt">
-           <h5 class="title"> Food Waste Digesters</h5>
+           <h5 class="title" onclick="service(this)"> Food Waste Digesters</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
           </div> 
           <span class="icon"><img src="assets/img/icons/service/Food Waste Digesters.png" alt="service"></span>
@@ -366,13 +361,13 @@
 
         <div class="service">
           <div class="cnt">
-           <h5 class="title"> Solid Waste Incineration</h5>
+           <h5 class="title" onclick="service(this)"> Solid Waste Incineration</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
           </div> 
           <span class="icon"><img src="assets/img/icons/service/Solid Waste Incineration.png" alt="service"></span>
         </div>
 
-        <div class="service">
+        <div class="service" onclick="service(this)">
           <div class="cnt">
            <h5 class="title"> Water Conservation & recharging</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -380,7 +375,7 @@
           <span class="icon"><img src="assets/img/icons/service/Water Conservation & recharging.png" alt="service"></span>
         </div>
 
-        <div class="service">
+        <div class="service" onclick="service(this)">
           <div class="cnt">
            <h5 class="title"> Solar Power Plant</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -388,7 +383,7 @@
           <span class="icon"><img src="assets/img/icons/service/Solar Power Plant.png" alt="service"></span>
         </div>
 
-        <div class="service">
+        <div class="service" onclick="service(this)">
           <div class="cnt">
            <h5 class="title"> Integrated Farming</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -396,7 +391,7 @@
           <span class="icon"><img src="assets/img/icons/service/Integrated Farming.png" alt="service"></span>
         </div>
 
-        <div class="service">
+        <div class="service" onclick="service(this)">
           <div class="cnt">
            <h5 class="title">Enviro Consultancy Services</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -404,7 +399,7 @@
           <span class="icon"><img src="assets/img/icons/service/Enviro Consultancy Services.png" alt="service"></span>
         </div>
 
-        <div class="service">
+        <div class="service" onclick="service(this)">
           <div class="cnt">
            <h5 class="title"> Pollution Control Maintenance Services</h5>
            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
@@ -418,6 +413,11 @@
 
   </div>
 </section>
+<script>
+  function service(element) {
+            element.classList.add('show');
+        }
+</script>
 <!--==================================================================
                         services end
 ==================================================================-->
